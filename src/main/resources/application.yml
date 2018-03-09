@@ -1,0 +1,9 @@
+spring:
+  liquibase:
+    change-log: db/changelog/db.changelog-master.xml
+
+datasource:
+  url: @datasource.url@
+  username: @datasource.username@
+  password: @datasource.password@
+  driver: @datasource.driver@
