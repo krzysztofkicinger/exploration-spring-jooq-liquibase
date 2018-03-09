@@ -62,7 +62,7 @@
                 <configuration>
                     <propertyFile>target/classes/liquibase.properties</propertyFile>
                     <migrationSqlOutputFile>${basedir}/src/main/resources/db/db.changelog-master.sql</migrationSqlOutputFile>
-                    <!--<changeLogFile>${basedir}/src/main/resources/db/changelog/db.changelog-master.xml</changeLogFile>-->
+                    <!--<changeLogFile>${basedir}/src/main/resources/db/changelog/db.local.changelog-master.xml</changeLogFile>-->
                     <!--<diffChangeLogFile>changelogDiff.xml</diffChangeLogFile>-->
                     <!--<promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>-->
 
@@ -97,7 +97,7 @@
             </activation>
             <build>
                 <filters>
-                    <filter>${basedir}/src/main/filters/local/jdbc.properties</filter>
+                    <filter>${basedir}/src/main/filters/local/db.properties</filter>
                 </filters>
             </build>
         </profile>

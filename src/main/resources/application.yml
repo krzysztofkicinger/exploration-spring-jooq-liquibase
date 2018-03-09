@@ -1,6 +1,6 @@
 spring:
   liquibase:
-    change-log: db/changelog/db.changelog-master.xml
+    change-log: @liquibase.change-log@
 
 datasource:
   url: @datasource.url@
