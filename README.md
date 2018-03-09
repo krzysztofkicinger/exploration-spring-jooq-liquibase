@@ -21,3 +21,8 @@ mvn resources:resources liquibase:generateChangeLog
 ```bash
 mvn resources:resources liquibase:updateSQL
 ```
+
+# jOOQ
+
+* https://github.com/jOOQ/jOOQ/issues/6650
+* https://docs.spring.io/spring-boot/docs/1.3.8.RELEASE/reference/html/boot-features-jooq.html 
