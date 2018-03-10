@@ -14,12 +14,16 @@ By default, Liquibase autowires the (@Primary) DataSource in your context and us
 
 ```bash
 mvn resources:resources liquibase:generateChangeLog
+
+mvn properties:read-project-properties liquibase:updateSQL
 ```
 
 # How to generate sql update script?
 
 ```bash
 mvn resources:resources liquibase:updateSQL
+
+mvn properties:read-project-properties liquibase:updateSQL
 ```
 
 # jOOQ

@@ -1,5 +1,6 @@
 package com.kicinger.services;
 
+import com.kicinger.domain.tables.State;
 import com.kicinger.domain.tables.pojos.Person;
 import org.jooq.DSLContext;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 import static com.kicinger.domain.tables.Person.PERSON;
+import static com.kicinger.domain.tables.State.*;
 
 @Service
 @Transactional
@@ -24,7 +26,9 @@ public class PersonService {
     public List<Person> fetchPojos() {
         return this.create.select()
                 .from(PERSON)
-                .fetchInto(Person.class);
+                .innerJoin(STATE).onKey()
+                .fetch()
+                .into(Person.class);
     }
 
 }
