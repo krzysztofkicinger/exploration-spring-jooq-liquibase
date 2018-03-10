@@ -1,8 +1,7 @@
 package com.kicinger.configuration;
 
-import liquibase.integration.spring.SpringLiquibase;
-import org.springframework.boot.autoconfigure.liquibase.LiquibaseDataSource;
-import org.springframework.boot.context.properties.ConfigurationProperties;
+
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,20 +12,27 @@ import javax.sql.DataSource;
 @Configuration
 public class LiquibaseConfiguration {
 
-    @Bean
-    public SpringLiquibase liquibase() {
-        SpringLiquibase liquibase = new SpringLiquibase();
-        liquibase.setChangeLog("classpath:liquibase-changeLog.xml");
-        liquibase.setDataSource(dataSource());
-        return liquibase;
-    }
+//    @Bean
+//    public SpringLiquibase liquibase() {
+//        SpringLiquibase liquibase = new SpringLiquibase();
+//        liquibase.setChangeLog("classpath:liquibase-changeLog.xml");
+////        liquibase.setDataSource(dataSource());
+//        return liquibase;
+//    }
 
     @Bean
-    @LiquibaseDataSource
-    @ConfigurationProperties(prefix = "datasource")
-    public DataSource dataSource() {
+    @Primary
+    public DataSource dataSource(
+            @Value("${datasource.url}") String url,
+            @Value("${datasource.username}") String username,
+            @Value("${datasource.password}") String password,
+            @Value("${datasource.driver}") String driver) {
         return DataSourceBuilder
                 .create()
+                .username(username)
+                .password(password)
+                .url(url)
+                .driverClassName(driver)
                 .build();
     }
 

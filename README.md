@@ -25,4 +25,13 @@ mvn resources:resources liquibase:updateSQL
 # jOOQ
 
 * https://github.com/jOOQ/jOOQ/issues/6650
-* https://docs.spring.io/spring-boot/docs/1.3.8.RELEASE/reference/html/boot-features-jooq.html 
+* https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-sql.html#boot-features-jooq
+* https://www.jooq.org/doc/3.9/manual/getting-started/tutorials/jooq-in-7-steps/
+
+The fluent API offered by jOOQ is initiated via the org.jooq.DSLContext interface. Spring Boot will auto-configure a DSLContext as a Spring Bean and connect it to your application DataSource. To use the DSLContext you can just @Autowire it:
+
+## How to generate sources?
+
+```bash
+mvn resources:resources generate-sources
+```
