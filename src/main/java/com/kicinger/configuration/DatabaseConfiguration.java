@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Primary;
 import javax.sql.DataSource;
 
 @Configuration
-public class LiquibaseConfiguration {
+public class DatabaseConfiguration {
 
 //    @Bean
 //    public SpringLiquibase liquibase() {

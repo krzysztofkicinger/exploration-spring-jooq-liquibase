@@ -28,7 +28,11 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-reactor-netty</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -145,10 +149,6 @@
                 </dependencies>
                 <configuration>
                     <jdbc>
-                        <!--<driver>org.postgresql.Driver</driver>-->
-                        <!--<url>jdbc:postgresql://localhost:5432/exp-sjl</url>-->
-                        <!--<user>postgres</user>-->
-                        <!--<password>postgres</password>-->
                         <driver>${datasource.driver}</driver>
                         <url>${datasource.url}</url>
                         <user>${datasource.username}</user>
