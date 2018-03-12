@@ -84,7 +84,7 @@
                 <version>1.0.0</version>
                 <configuration>
                     <files>
-                        <file>src/main/resources/db.properties</file>
+                        <file>src/main/resources/application-local.properties</file>
                     </files>
                 </configuration>
             </plugin>

@@ -4,8 +4,7 @@
 package com.kicinger.domain;
 
 
-import com.kicinger.domain.tables.Person;
-import com.kicinger.domain.tables.State;
+import com.kicinger.domain.tables.User;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -32,7 +31,7 @@ import org.jooq.impl.SchemaImpl;
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Public extends SchemaImpl {
 
-    private static final long serialVersionUID = -1016457808;
+    private static final long serialVersionUID = -1138413900;
 
     /**
      * The reference instance of <code>public</code>
@@ -40,14 +39,9 @@ public class Public extends SchemaImpl {
     public static final Public PUBLIC = new Public();
 
     /**
-     * The table <code>public.person</code>.
+     * The table <code>public.user</code>.
      */
-    public final Person PERSON = com.kicinger.domain.tables.Person.PERSON;
-
-    /**
-     * The table <code>public.state</code>.
-     */
-    public final State STATE = com.kicinger.domain.tables.State.STATE;
+    public final User USER = com.kicinger.domain.tables.User.USER;
 
     /**
      * No further instances allowed
@@ -74,7 +68,7 @@ public class Public extends SchemaImpl {
 
     private final List<Sequence<?>> getSequences0() {
         return Arrays.<Sequence<?>>asList(
-            Sequences.PERSON_ID_SEQ);
+            Sequences.USER_ID_SEQ);
     }
 
     @Override
@@ -86,7 +80,6 @@ public class Public extends SchemaImpl {
 
     private final List<Table<?>> getTables0() {
         return Arrays.<Table<?>>asList(
-            Person.PERSON,
-            State.STATE);
+            User.USER);
     }
 }

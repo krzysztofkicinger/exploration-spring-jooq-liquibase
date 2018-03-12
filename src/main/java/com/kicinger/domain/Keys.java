@@ -4,14 +4,11 @@
 package com.kicinger.domain;
 
 
-import com.kicinger.domain.tables.Person;
-import com.kicinger.domain.tables.State;
-import com.kicinger.domain.tables.records.PersonRecord;
-import com.kicinger.domain.tables.records.StateRecord;
+import com.kicinger.domain.tables.User;
+import com.kicinger.domain.tables.records.UserRecord;
 
 import javax.annotation.Generated;
 
-import org.jooq.ForeignKey;
 import org.jooq.Identity;
 import org.jooq.UniqueKey;
 import org.jooq.impl.Internal;
@@ -35,35 +32,28 @@ public class Keys {
     // IDENTITY definitions
     // -------------------------------------------------------------------------
 
-    public static final Identity<PersonRecord, Integer> IDENTITY_PERSON = Identities0.IDENTITY_PERSON;
+    public static final Identity<UserRecord, Integer> IDENTITY_USER = Identities0.IDENTITY_USER;
 
     // -------------------------------------------------------------------------
     // UNIQUE and PRIMARY KEY definitions
     // -------------------------------------------------------------------------
 
-    public static final UniqueKey<PersonRecord> PK_PERSON = UniqueKeys0.PK_PERSON;
-    public static final UniqueKey<StateRecord> STATE_PKEY = UniqueKeys0.STATE_PKEY;
+    public static final UniqueKey<UserRecord> PK_USER = UniqueKeys0.PK_USER;
 
     // -------------------------------------------------------------------------
     // FOREIGN KEY definitions
     // -------------------------------------------------------------------------
 
-    public static final ForeignKey<PersonRecord, StateRecord> PERSON__FK_PERSON_STATE = ForeignKeys0.PERSON__FK_PERSON_STATE;
 
     // -------------------------------------------------------------------------
     // [#1459] distribute members to avoid static initialisers > 64kb
     // -------------------------------------------------------------------------
 
     private static class Identities0 {
-        public static Identity<PersonRecord, Integer> IDENTITY_PERSON = Internal.createIdentity(Person.PERSON, Person.PERSON.ID);
+        public static Identity<UserRecord, Integer> IDENTITY_USER = Internal.createIdentity(User.USER, User.USER.ID);
     }
 
     private static class UniqueKeys0 {
-        public static final UniqueKey<PersonRecord> PK_PERSON = Internal.createUniqueKey(Person.PERSON, "pk_person", Person.PERSON.ID);
-        public static final UniqueKey<StateRecord> STATE_PKEY = Internal.createUniqueKey(State.STATE, "state_pkey", State.STATE.ID);
-    }
-
-    private static class ForeignKeys0 {
-        public static final ForeignKey<PersonRecord, StateRecord> PERSON__FK_PERSON_STATE = Internal.createForeignKey(com.kicinger.domain.Keys.STATE_PKEY, Person.PERSON, "person__fk_person_state", Person.PERSON.STATE);
+        public static final UniqueKey<UserRecord> PK_USER = Internal.createUniqueKey(User.USER, "pk_user", User.USER.ID);
     }
 }

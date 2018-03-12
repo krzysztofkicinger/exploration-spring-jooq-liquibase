@@ -4,8 +4,7 @@
 package com.kicinger.domain;
 
 
-import com.kicinger.domain.tables.Person;
-import com.kicinger.domain.tables.State;
+import com.kicinger.domain.tables.User;
 
 import javax.annotation.Generated;
 
@@ -24,12 +23,7 @@ import javax.annotation.Generated;
 public class Tables {
 
     /**
-     * The table <code>public.person</code>.
+     * The table <code>public.user</code>.
      */
-    public static final Person PERSON = com.kicinger.domain.tables.Person.PERSON;
-
-    /**
-     * The table <code>public.state</code>.
-     */
-    public static final State STATE = com.kicinger.domain.tables.State.STATE;
+    public static final User USER = com.kicinger.domain.tables.User.USER;
 }

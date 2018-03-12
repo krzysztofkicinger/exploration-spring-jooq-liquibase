@@ -24,7 +24,7 @@ import org.jooq.impl.SequenceImpl;
 public class Sequences {
 
     /**
-     * The sequence <code>public.person_id_seq</code>
+     * The sequence <code>public.user_id_seq</code>
      */
-    public static final Sequence<Integer> PERSON_ID_SEQ = new SequenceImpl<Integer>("person_id_seq", Public.PUBLIC, org.jooq.impl.SQLDataType.INTEGER.nullable(false));
+    public static final Sequence<Integer> USER_ID_SEQ = new SequenceImpl<Integer>("user_id_seq", Public.PUBLIC, org.jooq.impl.SQLDataType.INTEGER.nullable(false));
 }

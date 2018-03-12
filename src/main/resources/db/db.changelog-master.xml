@@ -16,7 +16,7 @@
             <column name="lastname" type="varchar(50)">
                 <constraints nullable="false"/>
             </column>
-            <column name="email" type="varchar(50)"/>
+            <column name="password" type="varchar(50)"/>
             <column name="email" type="varchar(50)"/>
         </createTable>
     </changeSet>

@@ -4,8 +4,7 @@
 package com.kicinger.domain;
 
 
-import com.kicinger.domain.tables.Person;
-import com.kicinger.domain.tables.State;
+import com.kicinger.domain.tables.User;
 
 import javax.annotation.Generated;
 
@@ -31,15 +30,13 @@ public class Indexes {
     // INDEX definitions
     // -------------------------------------------------------------------------
 
-    public static final Index PK_PERSON = Indexes0.PK_PERSON;
-    public static final Index STATE_PKEY = Indexes0.STATE_PKEY;
+    public static final Index PK_USER = Indexes0.PK_USER;
 
     // -------------------------------------------------------------------------
     // [#1459] distribute members to avoid static initialisers > 64kb
     // -------------------------------------------------------------------------
 
     private static class Indexes0 {
-        public static Index PK_PERSON = Internal.createIndex("pk_person", Person.PERSON, new OrderField[] { Person.PERSON.ID }, true);
-        public static Index STATE_PKEY = Internal.createIndex("state_pkey", State.STATE, new OrderField[] { State.STATE.ID }, true);
+        public static Index PK_USER = Internal.createIndex("pk_user", User.USER, new OrderField[] { User.USER.ID }, true);
     }
 }

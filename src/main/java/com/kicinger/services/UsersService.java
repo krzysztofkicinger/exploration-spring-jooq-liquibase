@@ -1,15 +1,23 @@
 package com.kicinger.services;
 
-import com.kicinger.User;
+import com.kicinger.domain.tables.pojos.User;
+import com.kicinger.repositories.UsersRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 
 @Service
 public class UsersService {
 
+    private final UsersRepository usersRepository;
 
-    public Flux<User> getUsernames() {
-        return Flux.just(new User("johnsmith"), new User("philcollins"), new User("sting"));
+    @Autowired
+    public UsersService(UsersRepository usersRepository) {
+        this.usersRepository = usersRepository;
+    }
+
+    public Flux<User> getUsers() {
+        return Flux.fromIterable(usersRepository.getUsers());
     }
 
 }

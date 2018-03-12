@@ -90,5 +90,21 @@ The fluent API offered by jOOQ is initiated via the org.jooq.DSLContext interfac
 ## How to generate sources?
 
 ```bash
-mvn resources:resources generate-sources
+mvn properties:read-project-properties generate-sources
+```
+
+# Requests
+
+## Users GET request - /users
+
+### Accept: application/json
+
+```json
+[{"id":1,"firstname":"John","lastname":"Smith","password":null,"email":null}]
+```
+
+### Accept: text/event-stream
+
+```bash
+data:{"id":1,"firstname":"John","lastname":"Smith","password":null,"email":null}
 ```
