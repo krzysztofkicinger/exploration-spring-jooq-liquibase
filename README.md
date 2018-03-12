@@ -1,5 +1,58 @@
 # Exploration: Spring + jOOQ + Liquibase 
 
+## Properites Maven Plugin
+
+### How to use it from command line?
+
+```bash
+mvn properties:read-project-property
+```
+
+* http://www.mojohaus.org/properties-maven-plugin/plugin-info.html
+
+### How to configure it?
+
+Usually we define the `<execution>` tag that describes the phase which in the plugin should be applied. 
+
+```xml
+<plugin>
+    <groupId>org.codehaus.mojo</groupId>
+    <artifactId>properties-maven-plugin</artifactId>
+    <version>1.0.0</version>
+    <executions>
+        <execution>
+            <phase>initialize</phase>
+            <goals>
+                <goal>read-project-properties</goal>
+            </goals>
+        </execution>
+    </executions>
+</plugin>
+```
+
+This means that during `initialize` phase the plugin will be applied. Otherwise we can crete a global configuration:
+
+```xml
+<plugin>
+    <groupId>org.codehaus.mojo</groupId>
+    <artifactId>properties-maven-plugin</artifactId>
+    <version>1.0.0</version>
+    <configuration>
+        <files>
+            <file>src/main/resources/db.properties</file>
+        </files>
+    </configuration>
+</plugin>
+```
+
+Then we need to run the plugin explicitly:
+
+```bash
+mvn properties:read-project-property ...
+```
+
+* http://www.mojohaus.org/properties-maven-plugin/usage.html
+
 # Liquibase
 
 * https://docs.spring.io/spring-boot/docs/current/reference/html/howto-database-initialization.html

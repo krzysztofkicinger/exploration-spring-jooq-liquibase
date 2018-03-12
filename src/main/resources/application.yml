@@ -1,9 +1,3 @@
 spring:
-  liquibase:
-    change-log: @liquibase.change-log@
-
-datasource:
-  url: @datasource.url@
-  username: @datasource.username@
-  password: @datasource.password@
-  driver: @datasource.driver@
+  profiles:
+    active: local
